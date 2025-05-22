@@ -1,0 +1,57 @@
+---
+// src/pages/about.astro
+import MainLayout from '../layouts/MainLayout.astro';
+---
+<MainLayout title="About Us - SolarCo">
+  <div class="container mx-auto py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <article class="prose lg:prose-xl max-w-3xl mx-auto text-gray-700">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800 mb-10 text-center">
+        About SolarCo
+      </h1>
+      
+      <p class="lead text-lg">
+        Welcome to SolarCo, where we are dedicated to providing top-tier solar energy solutions. Our mission is to empower homeowners and businesses to transition to clean, renewable energy with ease and confidence.
+      </p>
+      <p>
+        Founded in 2023, we have been at the forefront of the solar revolution, helping countless clients reduce their carbon footprint and save on energy costs. We believe in a sustainable future, and solar energy is a key component of that vision. Our commitment to quality and customer satisfaction drives everything we do.
+      </p>
+      
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mt-16 mb-6">
+        Our Mission & Vision
+      </h2>
+      <p>
+        Our mission is to make solar energy accessible and affordable for everyone. We strive to deliver exceptional service, cutting-edge technology, and customized solutions that meet the unique needs of each client. We handle every aspect of the process, from initial consultation and system design to installation and ongoing support.
+      </p>
+      <p>
+        Our vision is a world powered by clean energy, where communities thrive in harmony with the environment. We are committed to playing our part in making that a reality by promoting sustainable practices and advocating for renewable energy adoption.
+      </p>
+
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mt-16 mb-6">
+        Our Team
+      </h2>
+      <p>
+        Our team is composed of experienced engineers, certified installers, and dedicated customer support staff. We are passionate about solar and are always ready to go the extra mile to ensure our clients are satisfied. We foster a culture of innovation, continuous learning, and customer-centricity. Our experts stay updated with the latest advancements in solar technology to bring you the most efficient and reliable solutions. Each member of our team shares a common goal: to provide you with the best possible solar experience.
+      </p>
+
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mt-16 mb-6">
+        Why Choose SolarCo?
+      </h2>
+      <ul>
+        <li><strong>Expertise:</strong> Years of experience in designing and installing high-performance solar systems.</li>
+        <li><strong>Quality:</strong> We use only premium quality panels and components from trusted manufacturers.</li>
+        <li><strong>Customization:</strong> Solutions tailored to your specific energy needs and property.</li>
+        <li><strong>Support:</strong> Dedicated customer service and comprehensive warranties.</li>
+        <li><strong>Sustainability:</strong> A genuine commitment to helping our planet and our customers.</li>
+      </ul>
+    </article>
+  </div>
+</MainLayout>
+
+<style is:global>
+  .prose h1, .prose h2 {
+    /* Ensure custom heading styles apply if prose defaults are too strong */
+  }
+  .prose .lead {
+    @apply text-xl text-gray-600; /* Example of extending prose styles */
+  }
+</style>

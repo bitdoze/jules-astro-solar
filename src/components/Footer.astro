@@ -1,0 +1,33 @@
+---
+const currentYear = new Date().getFullYear();
+import FacebookIcon from '../assets/icons/facebook.svg?raw';
+import TwitterIcon from '../assets/icons/twitter.svg?raw';
+import LinkedInIcon from '../assets/icons/linkedin.svg?raw';
+
+const socialLinks = [
+  { href: "#", icon: FacebookIcon, label: "Facebook" },
+  { href: "#", icon: TwitterIcon, label: "Twitter" },
+  { href: "#", icon: LinkedInIcon, label: "LinkedIn" },
+];
+---
+<footer class="bg-gray-800 text-gray-300 pt-12 pb-8 px-4 sm:px-6 lg:px-8 text-center">
+  <div class="container mx-auto">
+    <div class="flex justify-center space-x-6 mb-6">
+      {socialLinks.map(social => (
+        <a 
+          href={social.href} 
+          aria-label={social.label}
+          class="text-gray-400 hover:text-white transform hover:scale-110 transition-all duration-300 ease-in-out"
+        >
+          <div class="w-6 h-6" set:html={social.icon} />
+        </a>
+      ))}
+    </div>
+    <p class="text-sm mb-2">&copy; {currentYear} SolarCo. All rights reserved.</p>
+    <div class="text-xs space-x-3">
+      <a href="/privacy" class="text-gray-400 hover:text-green-400 hover:underline transition-colors duration-300">Privacy Policy</a>
+      <span class="text-gray-500">|</span>
+      <a href="/terms" class="text-gray-400 hover:text-green-400 hover:underline transition-colors duration-300">Terms of Service</a>
+    </div>
+  </div>
+</footer>

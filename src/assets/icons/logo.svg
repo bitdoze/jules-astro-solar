@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+  <defs>
+    <linearGradient id="gradSun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(255,223,0);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(255,165,0);stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradPanel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgb(0,100,200);stop-opacity:1" />
+      <stop offset="100%" style="stop-color:rgb(0,50,100);stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <circle cx="50" cy="35" r="20" fill="url(#gradSun)"/>
+  <path d="M20 75 L30 60 L70 60 L80 75 Z" fill="url(#gradPanel)" stroke="#003366" stroke-width="2"/>
+  <rect x="35" y="60" width="10" height="15" fill="#cccccc"/>
+  <rect x="55" y="60" width="10" height="15" fill="#cccccc"/>
+  <path d="M20 75 Q50 85 80 75" fill="none" stroke="#004488" stroke-width="1.5"/>
+  <text x="50" y="95" font-family="Arial, sans-serif" font-size="10" fill="#333" text-anchor="middle">SolarCo</text>
+</svg>

@@ -1,0 +1,65 @@
+---
+// src/pages/services.astro
+import MainLayout from '../layouts/MainLayout.astro';
+import SolarPanelIcon from '../assets/icons/solar-panel.svg?raw';
+import CommercialIcon from '../assets/icons/commercial-building.svg?raw';
+import BatteryIcon from '../assets/icons/battery.svg?raw';
+import MaintenanceIcon from '../assets/icons/maintenance-tool.svg?raw';
+
+const services = [
+  { id: "residential", name: "Residential Solar Installations", iconRaw: SolarPanelIcon, description: "Tailored solar solutions for your home. We handle everything from consultation and design to installation and commissioning. Lower your energy bills and increase your home's value with our state-of-the-art solar panel systems. Our systems are designed for maximum efficiency and longevity, ensuring you get the most out of your investment. We also offer flexible financing options to make going solar easier than ever." },
+  { id: "commercial", name: "Commercial & Industrial Solar", iconRaw: CommercialIcon, description: "Scalable solar systems designed for businesses of all sizes. Reduce your operating costs and enhance your company's sustainability profile. We offer comprehensive project management for large-scale installations, including detailed feasibility studies, system design, and ongoing support. Power your business with clean energy and demonstrate your commitment to a greener future." },
+  { id: "storage", name: "Battery Storage Solutions", iconRaw: BatteryIcon, description: "Maximize your energy independence with advanced battery storage systems. Store excess solar energy generated during the day for use at night or during power outages. Our battery solutions integrate seamlessly with your solar installation, providing reliable backup power and helping you manage your energy consumption more effectively." },
+  { id: "maintenance", name: "Maintenance & Repairs", iconRaw: MaintenanceIcon, description: "Ensure your solar system performs optimally for years to come with our comprehensive maintenance and repair services. We offer regular check-ups, panel cleaning, performance monitoring, and prompt repair services by certified technicians. Protect your investment and enjoy peace of mind with our expert care." }
+];
+---
+<MainLayout title="Our Services - SolarCo">
+  <div class="container mx-auto py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <header class="text-center mb-16">
+      <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-800">
+        Comprehensive Solar Solutions
+      </h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+        Explore our range of expert solar services designed to meet your energy needs.
+      </p>
+    </header>
+    
+    <div class="space-y-16">
+      {services.map((service, index) => (
+        <section 
+          id={service.id} 
+          class:list={[
+            "p-6 md:p-8 rounded-xl shadow-xl border border-gray-200",
+            index % 2 === 0 ? "bg-white" : "bg-gray-50" // Alternating background
+          ]}
+        >
+          <div class="flex flex-col md:flex-row items-center md:items-start">
+            <div class="flex-shrink-0 mb-6 md:mb-0 md:mr-8 h-20 w-20 flex items-center justify-center rounded-full bg-gradient-to-br from-green-400 to-blue-500 text-white shadow-md" set:html={service.iconRaw}>
+              {/* SVG Icon classes should be set on the SVG itself for proper sizing */}
+            </div>
+            <div class="flex-grow text-center md:text-left">
+              <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">{service.name}</h2>
+              <div class="prose prose-lg max-w-none text-gray-600 mb-6">
+                <p>{service.description}</p>
+              </div>
+              <a 
+                href={`/contact?service=${service.id}`} 
+                class="inline-block bg-green-600 text-white font-semibold py-3 px-8 rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50"
+              >
+                Get a Quote for {service.name} &rarr;
+              </a>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
+  </div>
+</MainLayout>
+
+<style is:global>
+  /* Ensure SVGs within the icon containers are sized appropriately */
+  #services .h-20 svg {
+    width: 3rem; /* Adjust as needed */
+    height: 3rem; /* Adjust as needed */
+  }
+</style>

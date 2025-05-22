@@ -1,0 +1,31 @@
+---
+// src/components/ProjectsPreview.astro
+const projects = [
+  { title: "Springfield Community Center Solar Array", imagePlaceholder: true, category: "Community" },
+  { title: "Greenville Industrial Rooftop Installation", imagePlaceholder: true, category: "Commercial" },
+  { title: "Blue Ridge Residential Solar", imagePlaceholder: true, category: "Residential" },
+];
+---
+<section class="py-16 md:py-20 px-4 bg-white">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 md:mb-16 text-gray-800">Our Recent Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      {projects.map(project => (
+        <div class="bg-gray-50 rounded-xl shadow-lg overflow-hidden border border-gray-200 group transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+          <div class="bg-gradient-to-br from-gray-300 to-gray-400 h-56 w-full flex items-center justify-center text-gray-500 text-lg font-semibold">
+            PROJECT IMAGE
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl lg:text-2xl font-semibold mb-2 text-gray-700 group-hover:text-green-600 transition-colors duration-300">{project.title}</h3>
+            <p class="text-sm text-green-600 font-medium">{project.category}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="mt-16">
+      <a href="/projects" class="bg-green-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-green-700 transform hover:scale-105 transition-all duration-300 ease-in-out shadow-md hover:shadow-lg">
+        View All Projects
+      </a>
+    </div>
+  </div>
+</section>

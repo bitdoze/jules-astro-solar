@@ -1,0 +1,28 @@
+---
+// src/components/Testimonials.astro
+const testimonials = [
+  { quote: "SolarCo made the switch to solar seamless and affordable! Their team was professional and efficient from start to finish.", name: "John D.", location: "Springfield" },
+  { quote: "Our energy bills have never been lower. Highly recommend SolarCo for their expertise and customer service!", name: "Jane S.", location: "Greenville" },
+  { quote: "The installation process was smooth, and the team answered all our questions. We're thrilled with our new solar system.", name: "Mike & Lisa R.", location: "Blue Ridge" },
+];
+---
+<section class="py-16 md:py-20 px-4 bg-gray-100">
+  <div class="container mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl font-bold mb-12 md:mb-16 text-gray-800">What Our Clients Say</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+      {testimonials.map(testimonial => (
+        <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg border border-gray-200 flex flex-col">
+          <blockquote class="text-gray-600 italic mb-6 flex-grow relative">
+            <span class="absolute -left-4 -top-2 text-6xl text-green-200 opacity-75">&ldquo;</span>
+            {testimonial.quote}
+            <span class="absolute -right-2 -bottom-4 text-6xl text-green-200 opacity-75">&rdquo;</span>
+          </blockquote>
+          <div class="mt-auto">
+            <p class="text-gray-800 font-semibold text-lg">{testimonial.name}</p>
+            {testimonial.location && <p class="text-gray-500 text-sm">{testimonial.location}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
