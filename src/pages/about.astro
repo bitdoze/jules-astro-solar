@@ -9,7 +9,7 @@ import MainLayout from '../layouts/MainLayout.astro';
         About SolarCo
       </h1>
       
-      <p class="lead text-lg">
+      <p class="lead">
         Welcome to SolarCo, where we are dedicated to providing top-tier solar energy solutions. Our mission is to empower homeowners and businesses to transition to clean, renewable energy with ease and confidence.
       </p>
       <p>
@@ -52,6 +52,8 @@ import MainLayout from '../layouts/MainLayout.astro';
     /* Ensure custom heading styles apply if prose defaults are too strong */
   }
   .prose .lead {
-    @apply text-xl text-gray-600; /* Example of extending prose styles */
+    font-size: theme('fontSize.xl');
+    line-height: theme('lineHeight.xl');
+    color: theme('colors.gray.600');
   }
 </style>
